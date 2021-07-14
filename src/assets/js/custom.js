@@ -74,7 +74,7 @@ var SportsZone = function(){
 	/* Load File ============ */
 	var dzTheme = function(){
 		 'use strict';
-		 var loadingImage = '<img src="images/loading.gif">';
+		 var loadingImage = '<img src="assets/images/loading.gif">';
 		 jQuery('.dzload').each(function(){
 		 var dzsrc =   siteUrl + $(this).attr('dzsrc');
 		  //jQuery(this).html(loadingImage);
@@ -91,8 +91,8 @@ var SportsZone = function(){
 			if($('.mo-left .header-nav').children('div').length == 0){
 				var logoData = jQuery('<div>').append($('.mo-left .logo-header').clone()).html();
 				jQuery('.mo-left .header-nav').prepend(logoData);
-				jQuery('.mo-left .header-nav .logo-header > a > img').attr('src','images/logo.png');
-				jQuery('.mo-left.lw .header-nav .logo-header > a > img').attr('src','images/logo-white.png');
+				jQuery('.mo-left .header-nav .logo-header > a > img').attr('src','assets/images/logo.png');
+				jQuery('.mo-left.lw .header-nav .logo-header > a > img').attr('src','assets/images/logo-white.png');
 			}
 		}else{
 			jQuery('.mo-left .header-nav div').empty();

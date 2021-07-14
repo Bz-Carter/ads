@@ -51,13 +51,7 @@
           <!-- main nav -->
           <div class="header-nav navbar-collapse collapse nav-dark justify-content-end"  id="navbarNavDropdown">
             <ul class=" nav navbar-nav">
-              <li class="active"> <a href="javascript:;">Home<i class="fa fa-chevron-down"></i></a>
-                <ul class="sub-menu">
-                  <li><a href="index.html">Home 1</a> </li>
-                  <li><a href="index-2.html">Home 2</a></li>
-                  <li><a href="index-3.html">Home 3</a></li>
-                  <li><a href="index-4.html">Home 4</a></li>
-                </ul>
+              <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> <a routerLink="/" >Accueil</a>
               </li>
               <li> <a href="javascript:;">Features<i class="fa fa-chevron-down"></i></a>
                 <ul class="sub-menu">
@@ -208,53 +202,9 @@
                   </li>
                 </ul>
               </li>
-              <li class="has-mega-menu "> <a href="javascript:;">Shortcodes<i class="fa fa-chevron-down"></i></a>
-                <ul class="mega-menu">
-                  <li> <a href="javascript:;">Shortcodes</a>
-                    <ul>
-                      <li><a href="shortcode-buttons.html">Buttons</a></li>
-                      <li><a href="shortcode-icon-box-styles.html">Icon box styles</a></li>
-                      <li><a href="shortcode-pricing-table.html">Pricing table</a></li>
-                      <li><a href="shortcode-toggles.html">Toggles</a></li>
-                      <li><a href="shortcode-team.html">Team</a></li>
-                    </ul>
-                  </li>
-                  <li> <a href="javascript:;">Shortcodes</a>
-                    <ul>
-                      <li><a href="shortcode-carousel-sliders.html">Carousel sliders</a></li>
-                      <li><a href="shortcode-image-box-content.html">Image box content</a></li>
-                      <li><a href="shortcode-tabs.html">Tabs</a></li>
-                      <li><a href="shortcode-counters.html">Counters</a></li>
-                      <li><a href="shortcode-light-box.html">Light Gallery <span class="new-page">New</span></a></li>
-                    </ul>
-                  </li>
-                  <li> <a href="javascript:;">Shortcodes</a>
-                    <ul>
-                      <li><a href="shortcode-accordians.html">Accordians</a></li>
-                      <li><a href="shortcode-dividers.html">Dividers</a></li>
-                      <li><a href="shortcode-images-effects.html">Images effects</a></li>
-                      <li><a href="shortcode-testimonials.html">Testimonials</a></li>
-                      <li><a href="shortcode-magnific-popup.html">Magnific Gallery <span class="new-page">New</span></a></li>
-                    </ul>
-                  </li>
-                  <li> <a href="javascript:;">Shortcodes</a>
-                    <ul>
-                      <li><a href="shortcode-alert-box.html">Alert box</a></li>
-                      <li><a href="shortcode-icon-box.html">Icon-box</a></li>
-                      <li><a href="shortcode-list-group.html">List group</a></li>
-                      <li><a href="shortcode-title-separators.html">title-separators</a></li>
-                      <li><a href="shortcode-all-widgets.html">Widgets</a></li>
-                    </ul>
-                  </li>
-                </ul>
+              <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> <a routerLink="/a-propos">A propos</a>
               </li>
-              <li> <a href="javascript:;">Contact us <i class="fa fa-chevron-down"></i></a>
-                <ul class="sub-menu right">
-                  <li><a href="contact.html">Contact us 1</a></li>
-                  <li><a href="contact-2.html">Contact us 2</a></li>
-                  <li><a href="contact-3.html">Contact us 3</a></li>
-                  <li><a href="contact-4.html">Contact us 4</a></li>
-                </ul>
+              <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> <a routerLink="/contact">Contact</a>
               </li>
             </ul>
           </div>
