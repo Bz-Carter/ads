@@ -6,6 +6,6 @@ import { RestService } from './rest.service';
 })
 export class TagService extends RestService {
   endpoint(): string {
-    return 'tags';
+    return 'tag';
   }
 }

@@ -6,6 +6,6 @@ import { RestService } from './rest.service';
 })
 export class VideoService extends RestService {
   endpoint(): string {
-    return 'videos';
+    return 'video';
   }
 }

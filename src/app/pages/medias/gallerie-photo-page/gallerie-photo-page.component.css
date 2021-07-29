@@ -1,0 +1,14 @@
+
+.overlay-icon a i {
+    background-color: #fff;
+    border-radius: 3px;
+}
+.icon-bx-xs {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+}
+.icon-bx-lg, .icon-bx-md, .icon-bx-sm, .icon-bx-xl, .icon-bx-xs {
+    display: inline-block;
+    text-align: center;
+}

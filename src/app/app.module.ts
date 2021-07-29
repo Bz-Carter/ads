@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { LightgalleryModule } from 'lightgallery/angular';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { HeaderComponent } from './layouts/header/header.component';
@@ -41,6 +42,7 @@ import { EventsPageComponent } from './pages/medias/events-page/events-page.comp
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    LightgalleryModule
   ],
   providers: [
     {

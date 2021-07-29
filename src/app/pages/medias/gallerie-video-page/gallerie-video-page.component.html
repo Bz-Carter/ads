@@ -1,1 +1,63 @@
-<p>gallerie-video-page works!</p>
+  <!-- Content -->
+  <div class="page-content">
+    <!-- inner page banner -->
+    <div class="dez-bnr-inr overlay-black-middle" style="background-image:url(assets/images/background/bg4.jpg);">
+        <div class="container">
+            <div class="dez-bnr-inr-entry">
+                <h1 class="text-white">Gallerie Vidéo</h1>
+            </div>
+        </div>
+    </div>
+    <!-- inner page banner END -->
+    <!-- Breadcrumb row -->
+    <div class="breadcrumb-row">
+        <div class="container">
+            <ul class="list-inline">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Médias</a></li>
+                <li>Gallerie Vidéo</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Breadcrumb row END -->
+    <div class="content-area">
+        <div class="container">
+            <div class="clearfix">
+                <!-- blog grid -->
+                <div id="masonry" class="row dez-blog-grid-3">
+                    <div class="post card-container col-lg-4 col-sm-6 col-12" *ngFor="let video of videos">
+                        <div class="blog-post blog-grid date-style-2">
+                            <div class="dez-post-media dez-img-effect zoom-slow">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/n2mh6zHTvqU" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            <div class="dez-post-info">
+                                <div class="dez-post-title ">
+                                    <h3 class="post-title"><a href="#">{{video.name}}</a></h3>
+                                </div>
+                                <div class="dez-post-meta ">
+                                    <ul>
+                                        <li class=""> <i class="fa fa-calendar"></i><strong>{{video.created | date: 'd MMM'}}</strong> <span> {{video.created | date: 'y'}}</span> </li>
+                                        <li class="post-author"><i class="fa fa-user"></i>By <a href="#">demongo</a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- blog grid END -->
+                <!-- Pagination -->
+                <div class="pagination-bx  clearfix ">
+                    <ul class="pagination">
+                        <li class="previous"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li class="next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                    </ul>
+                </div>
+                <!-- Pagination END -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Content END-->

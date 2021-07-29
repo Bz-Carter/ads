@@ -93,7 +93,7 @@
                     data-paddingbottom="[0,0,0,0]"
                     data-paddingleft="[0,0,0,0]"
                     style="z-index: 8; white-space: nowrap; background-color:rgba(0, 0, 0, 0) !important;">
-                    <a href="#" class="site-button m-r15">READ MORE </a>										
+                    <a href="#" class="site-button m-r15">HISTORIQUE </a>										
                   </div> 
                   
                   <div class="tp-caption" 
@@ -349,11 +349,12 @@
             <h3 class="text-white m-a0">Médias des derniers évenements</h3>
           </div>
           <div class="row dez-club-media">
-            <div class="col-lg-4 col-sm-6 m-b20" *ngFor="let media of medias | slice:0:6">
+            <div class="col-lg-4 col-sm-6 m-b20" *ngFor="let media of medias">
               <div class="dez-box">
                   <div class="dez-media dez-img-overlay2 dez-img-effect zoom"> <img width="350" height="314" src="{{media.image}}" alt="">
                       <div class="dez-info-has p-a20  no-hover">
                           <a href="">{{media.name}}</a>
+                          <br>
                           <!-- <a class="site-button button-sm radius-sm m-t5" href="">5+ Images </a> -->
                           <a class="site-button button-sm radius-sm m-t5" href="">+ Images: {{media.photos.length}} | + Videos: {{media.videos.length}}</a>
 

@@ -13,9 +13,9 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'medias-des-evenements', component: EventsPageComponent },
-  { path: 'gallerie-photos', component: GalleriePhotoPageComponent },
-  { path: 'gallerie-videos', component: GallerieVideoPageComponent },
+  { path: 'medias/evenements', component: EventsPageComponent },
+  { path: 'medias/gallerie-photos', component: GalleriePhotoPageComponent },
+  { path: 'medias/gallerie-video', component: GallerieVideoPageComponent },
   { path: 'direct', component: DirectPageComponent },
   { path: 'articles', component: ArticlesPageComponent },
   { path: 'a-propos', component: AboutPageComponent },
