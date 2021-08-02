@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
                 $('a[data-toggle="tab"]').click(function(){
                     // todo remove snippet on bootstrap v4
                     $('a[data-toggle="tab"]').click(function() {
-                      $($(this).attr('href')).show().addClass('show active').siblings().hide();
+                      $($(this).attr('routerLink')).show().addClass('show active').siblings().hide();
                     })
                 });
                 

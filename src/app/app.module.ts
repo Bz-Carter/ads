@@ -19,6 +19,8 @@ import { DonatePageComponent } from './pages/donate-page/donate-page.component';
 import { GalleriePhotoPageComponent } from './pages/medias/gallerie-photo-page/gallerie-photo-page.component';
 import { GallerieVideoPageComponent } from './pages/medias/gallerie-video-page/gallerie-video-page.component';
 import { EventsPageComponent } from './pages/medias/events-page/events-page.component';
+import { AudioComponent } from './pages/medias/audio/audio.component';
+import { HistoriqueComponent } from './pages/historique/historique.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { EventsPageComponent } from './pages/medias/events-page/events-page.comp
     DonatePageComponent,
     GalleriePhotoPageComponent,
     GallerieVideoPageComponent,
-    EventsPageComponent
+    EventsPageComponent,
+    AudioComponent,
+    HistoriqueComponent
   ],
   imports: [
     BrowserModule,

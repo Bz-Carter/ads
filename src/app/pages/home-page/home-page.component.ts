@@ -43,7 +43,7 @@ export class HomePageComponent implements OnInit {
           .revolution({
             sliderType: 'standard',
             jsFileLocation:
-              '//server.local/revslider/wp-content/plugins/revslider/public/assets/js/',
+              '/server.local/revslider/wp-content/plugins/revslider/public/assets/js/',
             sliderLayout: 'fullwidth',
             dottedOverlay: 'none',
             delay: 9000,
