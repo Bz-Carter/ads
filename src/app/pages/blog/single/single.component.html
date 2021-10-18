@@ -1,0 +1,172 @@
+<!-- Content -->
+<div class="page-content">
+    <!-- inner page banner -->
+    <div class="dez-bnr-inr overlay-black-middle" style="background-image:url({{article.image}});">
+        <div class="container">
+            <div class="dez-bnr-inr-entry">
+                <h1 class="text-white">{{article.title}}</h1>
+            </div>
+        </div>
+    </div>
+    <!-- inner page banner END -->
+    <!-- Breadcrumb row -->
+    <div class="breadcrumb-row">
+        <div class="container">
+            <ul class="list-inline">
+                <li><a routerLink="/">Accueil</a></li>
+                <li>{{article.title}}</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Breadcrumb row END -->
+    <div class="section-full content-inner">
+        <div class="container">
+            <div class="row">
+                <!-- Left part start -->
+                <div class="col-lg-9">
+                    <!-- blog start -->
+                    <div class="blog-post blog-single">
+                        <div class="dez-post-title ">
+                            <h3 class="post-title mt-0"><a href="#">{{article.title}}</a></h3>
+                        </div>
+                        <div class="dez-post-meta m-b20">
+                            <ul>
+                                <li class="post-date"> <i class="fa fa-calendar"></i><strong>{{article.created | date: 'd MMM'}}</strong> <span> {{article.created | date: 'y'}}</span> </li>
+                                <li class="post-author"><i class="fa fa-user"></i>By <a href="#">demongo</a> </li>
+                                <li class="post-comment"><i class="fa fa-comments"></i> <a href="#">0 Comments</a> </li>
+                            </ul>
+                        </div>
+                        <div class="dez-post-media dez-img-effect zoom-slow"> <a href="#"><img src="images/blog/default/thum1.jpg" alt=""></a> </div>
+                        <div class="dez-post-text">
+                            {{article.body}}
+                        </div>
+                        <div class="dez-post-tags clear">
+                            <div class="post-tags"> <a href="#">Child </a> <a href="#">Eduction </a> <a href="#">Money </a> <a href="#">Resturent </a> </div>
+                        </div>
+                    </div>
+                    <div class="clear" id="comment-list">
+                        <div class="comments-area m-b20" id="comments">
+                            <div class="share-details-btn">
+                                <ul>
+                                    <li><h5 class="m-a0">Share Post</h5></li>
+                                    <li><a href="#" class="site-button facebook button-sm"><i class="fa fa-facebook"></i> Facebook</a></li>
+                                    <li><a href="#" class="site-button google-plus button-sm"><i class="fa fa-google-plus"></i> Google Plus</a></li>
+                                    <li><a href="#" class="site-button linkedin button-sm"><i class="fa fa-linkedin"></i> Linkedin</a></li>
+                                    <li><a href="#" class="site-button instagram button-sm"><i class="fa fa-instagram"></i> Instagram</a></li>
+                                    <li><a href="#" class="site-button twitter button-sm"><i class="fa fa-twitter"></i> Twitter</a></li>
+                                    <li><a href="#" class="site-button whatsapp button-sm"><i class="fa fa-whatsapp"></i> Whatsapp</a></li>
+                                </ul>
+                            </div>
+                            <h2 class="comments-title">8 Comments</h2>
+                            <div class="bg-white">
+                                <!-- comment list END -->
+                                <ol class="comment-list">
+                                    <li class="comment">
+                                        <div class="comment-body">
+                                            <div class="comment-author vcard"> <img  class="avatar photo" src="images/testimonials/pic1.jpg" alt=""> <cite class="fn">Stacy poe</cite> <span class="says">says:</span> </div>
+                                            <div class="comment-meta"> <a href="#">October 6, 2020 at 7:15 am</a> </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae neqnsectetur adipiscing elit. Nam viae neqnsectetur adipiscing elit.
+                                                Nam vitae neque vitae sapien malesuada aliquet. </p>
+                                            <div class="reply"> <a href="#" class="comment-reply-link">Reply</a> </div>
+                                        </div>
+                                        <ol class="children">
+                                            <li class="comment odd parent">
+                                                <div class="comment-body">
+                                                    <div class="comment-author vcard"> <img  class="avatar photo" src="images/testimonials/pic2.jpg" alt=""> <cite class="fn">Stacy poe</cite> <span class="says">says:</span> </div>
+                                                    <div class="comment-meta"> <a href="#">October 6, 2020 at 7:15 am</a> </div>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae neque vitae sapien malesuada aliquet. 
+                                                        In viverra dictum justo in vehicula. Fusce et massa eu ante ornare molestie. Sed vestibulum sem felis, 
+                                                        ac elementum ligula blandit ac.</p>
+                                                    <div class="reply"> <a href="#" class="comment-reply-link">Reply</a> </div>
+                                                </div>
+                                                <ol class="children">
+                                                    <li class="comment odd parent">
+                                                        <div class="comment-body">
+                                                            <div class="comment-author vcard"> <img  class="avatar photo" src="images/testimonials/pic3.jpg" alt=""> <cite class="fn">Stacy poe</cite> <span class="says">says:</span> </div>
+                                                            <div class="comment-meta"> <a href="#">October 6, 2020 at 7:15 am</a> </div>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae neque vitae sapien malesuada aliquet. 
+                                                                In viverra dictum justo in vehicula. Fusce et massa eu ante ornare molestie. Sed vestibulum sem felis, 
+                                                                ac elementum ligula blandit ac.</p>
+                                                            <div class="reply"> <a href="#" class="comment-reply-link">Reply</a> </div>
+                                                        </div>
+                                                    </li>
+                                                </ol>
+                                                <!-- list END -->
+                                            </li>
+                                        </ol>
+                                        <!-- list END -->
+                                    </li>
+                                    <li class="comment">
+                                        <div class="comment-body">
+                                            <div class="comment-author vcard"> <img  class="avatar photo" src="images/testimonials/pic1.jpg" alt=""> <cite class="fn">Stacy poe</cite> <span class="says">says:</span> </div>
+                                            <div class="comment-meta"> <a href="#">October 6, 2020 at 7:15 am</a> </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae neque vitae sapien malesuada aliquet. 
+                                                In viverra dictum justo in vehicula. Fusce et massa eu ante ornare molestie. Sed vestibulum sem felis, 
+                                                ac elementum ligula blandit ac.</p>
+                                            <div class="reply"> <a href="#" class="comment-reply-link">Reply</a> </div>
+                                        </div>
+                                    </li>
+                                    <li class="comment">
+                                        <div class="comment-body">
+                                            <div class="comment-author vcard"> <img  class="avatar photo" src="images/testimonials/pic2.jpg" alt=""> <cite class="fn">Stacy poe</cite> <span class="says">says:</span> </div>
+                                            <div class="comment-meta"> <a href="#">October 6, 2020 at 7:15 am</a> </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae neque vitae sapien malesuada aliquet. 
+                                                In viverra dictum justo in vehicula. Fusce et massa eu ante ornare molestie. Sed vestibulum sem felis, 
+                                                ac elementum ligula blandit ac.</p>
+                                            <div class="reply"> <a href="#" class="comment-reply-link">Reply</a> </div>
+                                        </div>
+                                    </li>
+                                    <li class="comment">
+                                        <div class="comment-body">
+                                            <div class="comment-author vcard"> <img  class="avatar photo" src="images/testimonials/pic3.jpg" alt=""> <cite class="fn">Stacy poe</cite> <span class="says">says:</span> </div>
+                                            <div class="comment-meta"> <a href="#">October 6, 2020 at 7:15 am</a> </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae neque vitae sapien malesuada aliquet. 
+                                                In viverra dictum justo in vehicula. Fusce et massa eu ante ornare molestie. Sed vestibulum sem felis, 
+                                                ac elementum ligula blandit ac.</p>
+                                            <div class="reply"> <a href="#" class="comment-reply-link">Reply</a> </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                                <!-- comment list END -->
+                                <!-- Form -->
+                                <div class="comment-respond" id="respond">
+                                    <h2 class="comment-reply-title" id="reply-title">Leave a Reply <small> <a style="display:none;" href="#" id="cancel-comment-reply-link" rel="nofollow">Cancel reply</a> </small> </h2>
+                                    <form class="comment-form" id="commentform" method="post" action="http://sedatelab.com/developer/donate/wp-comments-post.php">
+                                        <p class="comment-form-author">
+                                            <label for="author">Name <span class="required">*</span></label>
+                                            <input type="text" value="Author" name="Author"  placeholder="Author" id="author">
+                                        </p>
+                                        <p class="comment-form-email">
+                                            <label for="email">Email <span class="required">*</span></label>
+                                            <input type="text" value="email" placeholder="Email" name="email" id="email">
+                                        </p>
+                                        <p class="comment-form-url">
+                                            <label for="url">Website</label>
+                                            <input type="text"  value="url"  placeholder="Website"  name="url" id="url">
+                                        </p>
+                                        <p class="comment-form-comment">
+                                            <label for="comment">Comment</label>
+                                            <textarea rows="8" name="comment" placeholder="Comment" id="comment"></textarea>
+                                        </p>
+                                        <p class="form-submit">
+                                            <input type="submit" value="Post Comment" class="submit" id="submit" name="submit">
+                                        </p>
+                                    </form>
+                                </div>
+                                <!-- Form -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- blog END -->
+                </div>
+                <!-- Left part END -->
+                <!-- Side bar start -->
+                <div class="col-lg-3">
+                    SIDE BAR COMING SOON
+                </div>
+                <!-- Side bar END -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Content END-->
