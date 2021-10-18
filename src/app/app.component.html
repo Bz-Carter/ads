@@ -1,15 +1,12 @@
-<div class="page-wraper home-dark">
-  <!-- header -->
-  <app-header></app-header>
-  <!-- header END -->
-  <!-- Content -->
-  <router-outlet></router-outlet>
-    
- <!-- Content END-->
-  <!-- Footer -->
-  <app-footer></app-footer>
-  <!-- Footer END-->
-  <!-- scroll top button -->
-  <button class="scroltop fa fa-caret-up" ></button>
-</div>
-<div id="loading-area"></div>
+<div class="page-wraper">
+  <app-header *ngIf="!(location == '/error')"></app-header>
+  
+    <!-- Content -->
+    <router-outlet></router-outlet>
+  
+    <!-- Content END-->
+    <app-footer *ngIf="!(location == '/error')"></app-footer>
+    <!-- scroll top button -->
+    <button class="scroltop fa fa-caret-up"></button>
+  </div>
+  
