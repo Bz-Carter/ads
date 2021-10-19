@@ -19,6 +19,10 @@ export class BlogComponent implements OnInit {
   categories: Category[] = [];
   tags: Tag[] = [];
   videos: Video[] = [];
+  page = 1;
+  count = 0;
+  tableSize = 8;
+  tableSizes = [3, 6, 9, 12];
 
   constructor(
     private articleService: ArticleService,
@@ -28,14 +32,12 @@ export class BlogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
+    this.fetchPosts();
     this.refresh();
   }
 
   refresh() {
-    this.articleService.all().subscribe((res: Response) => {
-      this.articles = res.data;
-    });
+   
     this.categoryService.all().subscribe((res: Response) => {
       this.categories = res.data;
     });
@@ -46,5 +48,23 @@ export class BlogComponent implements OnInit {
       this.videos = res.data;
     });
   }
+
+  fetchPosts(): void {
+    this.articleService.all().subscribe((res: Response) => {
+      this.articles = res.data;
+    });
+  }
+
+  onTableDataChange(event){
+    this.page = event;
+    this.fetchPosts();
+    window.scrollTo(0, 0);
+  }  
+
+  onTableSizeChange(event): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.fetchPosts();
+  }  
 
 }

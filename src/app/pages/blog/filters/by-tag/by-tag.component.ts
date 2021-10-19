@@ -22,6 +22,10 @@ export class ByTagComponent implements OnInit {
   tag: Tag;
   tags: Tag;
   videos: Video[] = [];
+  page = 1;
+  count = 0;
+  tableSize = 10;
+  tableSizes = [3, 6, 9, 12];
 
   constructor(
     private categoryService: CategoryService,
@@ -36,9 +40,7 @@ export class ByTagComponent implements OnInit {
       this.videos = res.data;
     });
 
-    this.articleService.all().subscribe((res: Response) => {
-      this.articles = res.data;
-    });
+    this.fetchPosts();
 
     this.categoryService.all().subscribe((res: Response) => {
       this.categories = res.data;
@@ -54,5 +56,23 @@ export class ByTagComponent implements OnInit {
       });
     });
   }
+
+  fetchPosts(): void {
+    this.articleService.all().subscribe((res: Response) => {
+      this.articles = res.data;
+    });
+  }
+
+  onTableDataChange(event){
+    this.page = event;
+    this.fetchPosts();
+    window.scrollTo(0, 0);
+  }  
+
+  onTableSizeChange(event): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.fetchPosts();
+  }  
 
 }

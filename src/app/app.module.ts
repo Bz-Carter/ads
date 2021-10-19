@@ -28,7 +28,7 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    LoadingBarRouterModule
+    LoadingBarRouterModule,
   ],
   providers: [
     {

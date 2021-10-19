@@ -27,7 +27,14 @@
                     <div class="clearfix">
                         <!-- blog grid  -->
                         <div id="masonry" class="row dez-blog-grid-2">
-                            <div class="post card-container col-lg-6 col-sm-6 col-12" *ngFor="let article of articles">
+                            <div class="post card-container col-lg-6 col-sm-6 col-12" 
+                                *ngFor="let article of articles | paginate : {
+                                    itemsPerPage: tableSize,
+                                    currentPage: page,
+                                    totalItems: count
+                                };
+                                let i = index" [class.active]="i == currentIndex"
+                            >
                                 <div class="blog-post blog-grid date-style-2">
                                     <div class="dez-post-media dez-img-effect zoom-slow"> 
                                         <a [routerLink]="['/articles/', article.id]">
@@ -66,13 +73,15 @@
                         <!-- blog grid END -->
                         <!-- Pagination start -->
                         <div class="pagination-bx  clearfix ">
-                            <ul class="pagination">
-                                <li class="previous"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li class="next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-                            </ul>
+                            <div class="pagination">
+                                <pagination-controls 
+                                responsive="true" 
+                                previousLabel="Précédent" 
+                                nextLabel="Suivant" 
+                                (pageChange)="onTableDataChange($event)">
+                              </pagination-controls>
+                            </div>
+                            
                         </div>
                         <!-- Pagination END -->
                     </div>

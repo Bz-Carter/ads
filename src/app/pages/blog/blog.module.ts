@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 import { BlogRoutingModule } from './blog-routing.module';
 import { BlogComponent } from './blog.component';
@@ -19,7 +21,8 @@ import { ByTagComponent } from './filters/by-tag/by-tag.component';
   ],
   imports: [
     CommonModule,
-    BlogRoutingModule
+    BlogRoutingModule,
+    NgxPaginationModule
   ]
 })
 export class BlogModule { }

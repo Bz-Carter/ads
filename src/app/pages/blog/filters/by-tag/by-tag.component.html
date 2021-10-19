@@ -22,7 +22,12 @@
     <div class="content-area">
         <div class="container">
             <!-- Blog half image -->
-            <div class="blog-post blog-md clearfix date-style-2" *ngFor="let article of articles">
+            <div class="blog-post blog-md clearfix date-style-2" *ngFor="let article of articles | paginate : {
+                itemsPerPage: tableSize,
+                currentPage: page,
+                totalItems: count
+                };
+                let i = index" [class.active]="i == currentIndex">
                 <div *ngFor="let articleTag of article.tags">
                     <div class="dez-post-media dez-img-effect zoom-slow" *ngIf="tag.id === articleTag"> <a [routerLink]="['/articles/', article.id]"><img [src]="article.image" alt=""></a> </div>
                     <div class="dez-post-info" *ngIf="tag.id === articleTag">
@@ -52,15 +57,17 @@
                 </div>
             </div>
             <!-- Blog half image END -->
-            <!-- Pagination  -->
-            <div class="pagination-bx clearfix ">
-                <ul class="pagination">
-                    <li class="previous"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-                    <li class="active"><a href="#">1</a> </li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li class="next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-                </ul>
+             <!-- Pagination start -->
+             <div class="pagination-bx  clearfix ">
+                <div class="pagination">
+                    <pagination-controls 
+                    responsive="true" 
+                    previousLabel="Précédent" 
+                    nextLabel="Suivant" 
+                    (pageChange)="onTableDataChange($event)">
+                  </pagination-controls>
+                </div>
+                
             </div>
             <!-- Pagination END -->
         </div>

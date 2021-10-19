@@ -21,6 +21,10 @@ export class ByCategoryComponent implements OnInit {
   category: Category;
   tags: Tag[] = [];
   videos: Video[] = [];
+  page = 1;
+  count = 0;
+  tableSize = 10;
+  tableSizes = [3, 6, 9, 12];
 
   constructor(
     private categoryService: CategoryService,
@@ -35,9 +39,7 @@ export class ByCategoryComponent implements OnInit {
       this.videos = res.data;
     });
 
-    this.articleService.all().subscribe((res: Response) => {
-      this.articles = res.data;
-    });
+    this.fetchPosts();
 
     this.tagService.all().subscribe((res: Response) => {
       this.tags = res.data;
@@ -53,5 +55,23 @@ export class ByCategoryComponent implements OnInit {
   filterFunction(articles): any[] {
     return articles.filter(article => article.category === this.category.id)
   }
+
+  fetchPosts(): void {
+    this.articleService.all().subscribe((res: Response) => {
+      this.articles = res.data;
+    });
+  }
+
+  onTableDataChange(event){
+    this.page = event;
+    this.fetchPosts();
+    window.scrollTo(0, 0);
+  }  
+
+  onTableSizeChange(event): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.fetchPosts();
+  }  
 
 }
