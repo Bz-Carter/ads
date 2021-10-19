@@ -1,6 +1,6 @@
 <aside  class="side-bar">
     <div class="widget">
-        <h4 class="widget-title">Search</h4>
+        <h4 class="widget-title">Rechercher</h4>
         <div class="search-bx">
             <form role="search" method="post">
                 <div class="input-group">
@@ -12,10 +12,13 @@
         </div>
     </div>
     <div class="widget recent-posts-entry">
-        <h4 class="widget-title">Recent Posts</h4>
+        <h4 class="widget-title">Vidéos Récentent</h4>
         <div class="widget-post-bx">
             <div class="widget-post clearfix" *ngFor="let video of videos | slice:0:3">
-                <div class="dez-post-media"> <img src="assets/images/blog/recent-blog/pic1.jpg" width="200" height="143" alt=""> </div>
+                <div class="dez-post-media"> 
+                    <!-- <iframe [src]="('https://www.youtube.com/embed/' + video?.link | safeUrl)" frameborder="0" width="200" height="143"></iframe> -->
+                    <img src="assets/images/blog/recent-blog/pic1.jpg" width="200" height="143" alt=""> 
+                </div>
                 <div class="dez-post-info">
                     <div class="dez-post-header">
                         <h6 class="post-title"><a href="#">{{video.name}}</a></h6>
@@ -31,13 +34,13 @@
         </div>
     </div>
     <div class="widget widget_categories">
-        <h4 class="widget-title">Categories List</h4>
+        <h4 class="widget-title">Liste des Categories</h4>
         <ul>
-            <li *ngFor="let category of categories"><a href="#">{{category.name}}</a> (1)</li>
+            <li *ngFor="let category of categories"><a [routerLink]="['/articles/categorie/', category.id]">{{category.name}}</a> (1)</li>
         </ul>
     </div>
     <div class="widget widget_gallery">
-        <h5 class="widget-title">Our services</h5>
+        <h5 class="widget-title">Evenements Récents</h5>
         <ul>
             <li class="img-effect2"> <a href="#"><img src="assets/images/gallery/pic1.jpg" alt=""></a> </li>
             <li class="img-effect2"> <a href="#"><img src="assets/images/gallery/pic2.jpg" alt=""></a> </li>
@@ -48,9 +51,9 @@
         </ul>
     </div>
     <div class="widget widget_tag_cloud">
-        <h4 class="tagcloud">Tags</h4>
+        <h4 class="tagcloud">Mots Clés</h4>
         <div class="tagcloud"> 
-            <a href="#" *ngFor="let tag of tags">{{tag.name}}</a> 
+            <a [routerLink]="['/articles/tags/', tag.id]" *ngFor="let tag of tags">{{tag.name}}</a> 
         </div>
     </div>
 </aside>

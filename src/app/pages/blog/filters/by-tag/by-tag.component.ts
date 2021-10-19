@@ -11,15 +11,16 @@ import { TagService } from 'src/app/services/tag.service';
 import { VideoService } from 'src/app/services/video.service';
 
 @Component({
-  selector: 'app-single',
-  templateUrl: './single.component.html',
-  styleUrls: ['./single.component.css']
+  selector: 'app-by-tag',
+  templateUrl: './by-tag.component.html',
+  styleUrls: ['./by-tag.component.css']
 })
-export class SingleComponent implements OnInit {
+export class ByTagComponent implements OnInit {
 
-  article: Article;
+  articles: Article[] = [];
   categories: Category[] = [];
-  tags: Tag[] = [];
+  tag: Tag;
+  tags: Tag;
   videos: Video[] = [];
 
   constructor(
@@ -35,6 +36,10 @@ export class SingleComponent implements OnInit {
       this.videos = res.data;
     });
 
+    this.articleService.all().subscribe((res: Response) => {
+      this.articles = res.data;
+    });
+
     this.categoryService.all().subscribe((res: Response) => {
       this.categories = res.data;
     });
@@ -44,8 +49,8 @@ export class SingleComponent implements OnInit {
     });
 
     this.route.params.subscribe((params) => {
-      this.articleService.get(params.id).subscribe((res: Response) => {
-        this.article = res.data;
+      this.tagService.get(params.id).subscribe((res: Response) => {
+        this.tag = res.data;
       });
     });
   }

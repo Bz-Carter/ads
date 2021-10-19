@@ -36,7 +36,7 @@
                                 <li class="post-comment"><i class="fa fa-comments"></i> <a href="#">0 Comments</a> </li>
                             </ul>
                         </div>
-                        <div class="dez-post-media dez-img-effect zoom-slow"> <a href="#"><img src="images/blog/default/thum1.jpg" alt=""></a> </div>
+                        <div class="dez-post-media dez-img-effect zoom-slow"> <a href="#"><img [src]="article.image" alt=""></a> </div>
                         <div class="dez-post-text">
                             {{article.body}}
                         </div>
@@ -162,7 +162,7 @@
                 <!-- Left part END -->
                 <!-- Side bar start -->
                 <div class="col-lg-3">
-                    SIDE BAR COMING SOON
+                    <app-side-bar [categories]="categories" [tags]="tags" [videos]="videos"></app-side-bar>
                 </div>
                 <!-- Side bar END -->
             </div>

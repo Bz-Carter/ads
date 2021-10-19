@@ -29,12 +29,16 @@
                         <div id="masonry" class="row dez-blog-grid-2">
                             <div class="post card-container col-lg-6 col-sm-6 col-12" *ngFor="let article of articles">
                                 <div class="blog-post blog-grid date-style-2">
-                                    <div class="dez-post-media dez-img-effect zoom-slow"> <a [routerLink]="[ article.title]"
-                                    routerLinkActive="router-link-active"><img [src]="article.image" alt=""></a> </div>
+                                    <div class="dez-post-media dez-img-effect zoom-slow"> 
+                                        <a [routerLink]="['/articles/', article.id]">
+                                            <img [src]="article.image" alt="">
+                                        </a> 
+                                    </div>
                                     <div class="dez-post-info">
                                         <div class="dez-post-title ">
-                                            <h3 class="post-title"><a [routerLink]="[ article.title]"
-                                            routerLinkActive="router-link-active">{{article.title}}</a></h3>
+                                            <h3 class="post-title">
+                                                <a [routerLink]="['/articles/', article.id]">{{article.title}}</a>
+                                            </h3>
                                         </div>
                                         <div class="dez-post-meta ">
                                             <ul>
@@ -46,12 +50,12 @@
                                         <div class="dez-post-text">
                                             <p>{{article.description}}</p>
                                         </div>
-                                        <div class="dez-post-readmore"> <a [routerLink]="[ article.title]"
-                                        routerLinkActive="router-link-active" title="READ MORE" rel="bookmark" class="site-button-link">READ MORE<i class="fa fa-angle-double-right"></i></a> </div>
+                                        <div class="dez-post-readmore"> <a [routerLink]="['/articles/', article.id]"
+                                         title="READ MORE" rel="bookmark" class="site-button-link">En savoir plus<i class="fa fa-angle-double-right"></i></a> </div>
                                         <div class="dez-post-tags">
                                             <div class="post-tags" *ngFor="let tag of tags">
                                                 <div *ngFor="let articleTag of article.tags">
-                                                   <a href="#" *ngIf="tag.id === articleTag"># {{tag.name}}</a>
+                                                   <a [routerLink]="['/articles/tags/', tag.id]" *ngIf="tag.id === articleTag"># {{tag.name}}</a>
                                                </div>
                                            </div>
                                         </div>

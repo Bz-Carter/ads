@@ -1,0 +1,69 @@
+<!-- Content -->
+<div class="page-content">
+    <!-- inner page banner -->
+    <div class="dez-bnr-inr overlay-black-middle" style="background-image:url(images/background/bg4.jpg);">
+        <div class="container">
+            <div class="dez-bnr-inr-entry">
+                <h1 class="text-white">{{tag.name}}</h1>
+            </div>
+        </div>
+    </div>
+    <!-- inner page banner END -->
+    <!-- Breadcrumb row -->
+    <div class="breadcrumb-row">
+        <div class="container">
+            <ul class="list-inline">
+                <li><a routerLink="/">Accueil</a></li>
+                <li>{{tag.name}}</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Breadcrumb row END -->
+    <div class="content-area">
+        <div class="container">
+            <!-- Blog half image -->
+            <div class="blog-post blog-md clearfix date-style-2" *ngFor="let article of articles">
+                <div *ngFor="let articleTag of article.tags">
+                    <div class="dez-post-media dez-img-effect zoom-slow" *ngIf="tag.id === articleTag"> <a [routerLink]="['/articles/', article.id]"><img [src]="article.image" alt=""></a> </div>
+                    <div class="dez-post-info" *ngIf="tag.id === articleTag">
+                        <div class="dez-post-title ">
+                            <h3 class="post-title"><a [routerLink]="['/articles/', article.id]">{{article.title}}</a></h3>
+                        </div>
+                        <div class="dez-post-meta ">
+                            <ul>
+                                <li class="post-date"> <i class="fa fa-calendar"></i><strong>{{article.created | date: 'd MMM'}}</strong> <span> {{article.created | date: 'y'}}</span> </li>
+                                <li class="post-author"><i class="fa fa-user"></i>By <a href="#">demongo</a> </li>
+                                <li class="post-comment"><i class="fa fa-comments"></i> <a href="#">0</a> </li>
+                            </ul>
+                        </div>
+                        <div class="dez-post-text">
+                            <p>{{article.description}}</p>
+                        </div>
+                        <div class="dez-post-readmore"> <a [routerLink]="['/articles/', article.id]" title="En savoir plus" rel="bookmark" class="site-button-link">En savoir plus<i class="fa fa-angle-double-right"></i></a> </div>
+                        <div class="dez-post-tags">
+                            <div class="post-tags" *ngFor="let t of tags">
+                                <div *ngFor="let articleTag of article.tags">
+                                <a [routerLink]="['/articles/tags/', t.id]" *ngIf="(t.id === articleTag && t.id !== tag.id)"># {{t.name}}</a>
+                                <a *ngIf="(t.id === articleTag && t.id == tag.id)" style="color: #e4ae00;"># {{t.name}}</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog half image END -->
+            <!-- Pagination  -->
+            <div class="pagination-bx clearfix ">
+                <ul class="pagination">
+                    <li class="previous"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                    <li class="active"><a href="#">1</a> </li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li class="next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                </ul>
+            </div>
+            <!-- Pagination END -->
+        </div>
+    </div>
+</div>
+<!-- Content END-->
