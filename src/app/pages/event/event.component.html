@@ -23,147 +23,46 @@
     <div class="content-area">
         <!-- Portfolio -->
         <div class="container">
-            <div class="site-filters clearfix center  m-b40">
-                <ul class="filters" data-toggle="buttons">
-                    <li data-filter="" class="btn active">
-                        <input type="radio">
-                        <a href="#" class="site-button-secondry"><span>Show All</span></a> </li>
-                    <li data-filter="home" class="btn">
+            <div class="site-filters clearfix">
+                
+                <ul data-toggle="buttons">
+                    
+                    <li class="btn">
                         <input type="radio" >
-                        <a href="#" class="site-button-secondry"><span>Water Sports</span></a> </li>
-                    <li data-filter="office" class="btn">
-                        <input type="radio">
-                        <a href="#" class="site-button-secondry"><span>Jumping</span></a> </li>
-                    <li data-filter="commercial" class="btn">
-                        <input type="radio">
-                        <a href="#" class="site-button-secondry "><span>Bikes</span></a> </li>
-                    <li data-filter="window" class="btn">
-                        <input type="radio">
-                        <a href="#" class="site-button-secondry"><span>Soccer</span></a> </li>
+                        <div class="site-button-secondry search-bx">
+                            <div class="input-group">
+                                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search events">
+                                <span class="input-group-btn">
+                                <button class="site-button"><i class="fa fa-search"></i></button>
+                                </span> 
+                            </div>
+                        </div>
+                    </li>
+                    <li class="btn" *ngFor="let category of categories">
+                        <input type="radio" >
+                        <a href="#" class="site-button-secondry"><span>{{category.name}}</span></a> 
+                    </li>
                 </ul>
             </div>
             <div class="clearfix">
-                <ul id="masonry" class="row dez-gallery-listing gallery-grid-4 m-b0 mfp-gallery">
-                    <li class="card-container col-lg-3 col-sm-6 m-b30 office">
-                        <div class="dez-box dez-gallery-bx">
-                            <div class="dez-media dez-img-overlay2 dez-img-effect zoom"> <img src="assets/images/gallery/pic1.jpg"  alt="">
-                                <div class="dez-info-has p-a20">
-                                    <div class="dez-info-has-text">We have the expertise to create just the right web presence for you.</div>
-                                    <ul class="dez-social-icon border">
-                                        <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                    </ul>
+                <ul class="row dez-gallery-listing gallery-grid-4 m-b0 mfp-gallery">
+                    <ng-container *ngFor="let ev of events | filter:searchKey:'name'">
+                        <li class="card-container col-lg-3 col-sm-6 m-b30 office">
+                            <div class="dez-box dez-gallery-bx">
+                                <div class="dez-media dez-img-overlay2 dez-img-effect zoom"> <img [src]="ev.image"  alt="">
+                                    <div class="dez-info-has p-a20">
+                                        <h1 class="m-b20 m-t0">{{ev.name}} </h1>
+                                        <p>Date: {{ev.created | date: 'd MMM y'}}</p>
+                                        <ul class="dez-social-icon border">
+                                            <a class="site-button button-sm radius-sm m-t5" *ngIf="ev.photos.length > 0">+ Images: {{ev.photos.length}}</a>
+                                            <li> </li>
+                                            <a class="site-button button-sm radius-sm m-t5" *ngIf="ev.videos.length > 0">+ Videos: {{ev.videos.length}}</a>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="card-container col-lg-3 col-sm-6 m-b30 office">
-                        <div class="dez-box dez-gallery-bx">
-                            <div class="dez-media dez-img-overlay2 dez-img-effect zoom"> <a href="javascript:void(0);"> <img src="assets/images/gallery/pic2.jpg"  alt=""> </a>
-                                <div class="dez-info-has p-a20">
-                                    <div class="dez-info-has-text">We have the expertise to create just the right web presence for you.</div>
-                                    <ul class="dez-social-icon border">
-                                        <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="card-container col-lg-3 col-sm-6 m-b30 commercial">
-                        <div class="dez-box dez-gallery-bx">
-                            <div class="dez-media dez-img-overlay2 dez-img-effect zoom"> <a href="javascript:void(0);"> <img src="assets/images/gallery/pic3.jpg"  alt=""> </a>
-                                <div class="dez-info-has p-a20">
-                                    <div class="dez-info-has-text">We have the expertise to create just the right web presence for you.</div>
-                                    <ul class="dez-social-icon border">
-                                        <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="card-container col-lg-3 col-sm-6 m-b30 window">
-                        <div class="dez-box dez-gallery-bx">
-                            <div class="dez-media dez-img-overlay2 dez-img-effect zoom"> <a href="javascript:void(0);"> <img src="assets/images/gallery/pic4.jpg"  alt=""> </a>
-                                <div class="dez-info-has p-a20">
-                                    <div class="dez-info-has-text">We have the expertise to create just the right web presence for you.</div>
-                                    <ul class="dez-social-icon border">
-                                        <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="card-container col-lg-3 col-sm-6 m-b30 window">
-                        <div class="dez-box dez-gallery-bx">
-                            <div class="dez-media dez-img-overlay2 dez-img-effect zoom"> <a href="javascript:void(0);"> <img src="assets/images/gallery/pic5.jpg"  alt=""> </a>
-                                <div class="dez-info-has p-a20">
-                                    <div class="dez-info-has-text">We have the expertise to create just the right web presence for you.</div>
-                                    <ul class="dez-social-icon border">
-                                        <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="card-container col-lg-3 col-sm-6 m-b30 commercial">
-                        <div class="dez-box dez-gallery-bx">
-                            <div class="dez-media dez-img-overlay2 dez-img-effect zoom"> <a href="javascript:void(0);"> <img src="assets/images/gallery/pic6.jpg"  alt=""> </a>
-                                <div class="dez-info-has p-a20">
-                                    <div class="dez-info-has-text">We have the expertise to create just the right web presence for you.</div>
-                                    <ul class="dez-social-icon border">
-                                        <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="card-container col-lg-3 col-sm-6 m-b30 office">
-                        <div class="dez-box dez-gallery-bx">
-                            <div class="dez-media dez-img-overlay2 dez-img-effect zoom"> <a href="javascript:void(0);"> <img src="assets/images/gallery/pic1.jpg"  alt=""> </a>
-                                <div class="dez-info-has p-a20">
-                                    <div class="dez-info-has-text">We have the expertise to create just the right web presence for you.</div>
-                                    <ul class="dez-social-icon border">
-                                        <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="card-container col-lg-3 col-sm-6 m-b30 home">
-                        <div class="dez-box dez-gallery-bx">
-                            <div class="dez-media dez-img-overlay2 dez-img-effect zoom"> <a href="javascript:void(0);"> <img src="assets/images/gallery/pic2.jpg"  alt=""> </a>
-                                <div class="dez-info-has p-a20">
-                                    <div class="dez-info-has-text">We have the expertise to create just the right web presence for you.</div>
-                                    <ul class="dez-social-icon border">
-                                        <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    </ng-container>
                 </ul>
             </div>
             <!-- Pagination start -->

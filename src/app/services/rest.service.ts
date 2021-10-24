@@ -22,6 +22,7 @@ export abstract class RestService {
   get(id: number) {
     return this.http.get(`${this.url}/${id}`);
   }
+  
 
   // create(data) {
   //   return this.http.post(this.url, data);
