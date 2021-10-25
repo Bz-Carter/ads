@@ -59,7 +59,7 @@
                             <div class="dez-box dez-gallery-bx">
                                 <div class="dez-media dez-img-overlay2 dez-img-effect zoom"> <img [src]="ev.image"  alt="">
                                     <div class="dez-info-has p-a20">
-                                        <h1 class="m-b20 m-t0"><a href="">{{ev.name}}</a> </h1>
+                                        <h1 class="m-b20 m-t0"><a  [routerLink]="['/evenements/', ev.id]">{{ev.name}}</a> </h1>
                                         <p>Date: {{ev.created | date: 'd MMM y'}}</p>
                                         <ul class="dez-social-icon border">
                                             <a href="" class="site-button button-sm radius-sm m-t5" *ngIf="ev.photos.length > 0">+ Images: {{ev.photos.length}}</a>

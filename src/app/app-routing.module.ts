@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/media/media.module').then(m => m.MediaModule)
   },
   {
-    path: 'evenement', 
+    path: 'evenements', 
     loadChildren: () => import('./pages/event/event.module').then(m => m.EventModule)
   },
   {
