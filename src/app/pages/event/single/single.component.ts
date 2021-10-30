@@ -17,6 +17,8 @@ import { PhotoService } from 'src/app/services/photo.service';
 })
 export class SingleComponent implements OnInit {
 
+  videosActivate = false;
+
   event: Media;
   categories: Category[] = [];
   videos: Video[] = [];
@@ -49,6 +51,13 @@ export class SingleComponent implements OnInit {
         this.event = res.data;
       });
     });
+  }
+
+  videosActive() {
+    this.videosActivate = !this.videosActivate;
+  }
+  photosActive() {
+    this.videosActivate = false;
   }
 
 }

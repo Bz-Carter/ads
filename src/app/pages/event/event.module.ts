@@ -15,7 +15,7 @@ import { SingleComponent } from './single/single.component';
     EventComponent,
     CalendrierComponent,
     FilterPipe,
-    SingleComponent,
+    SingleComponent
   ],
   imports: [
     CommonModule,
