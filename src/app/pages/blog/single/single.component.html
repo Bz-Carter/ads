@@ -37,8 +37,8 @@
                             </ul>
                         </div>
                         <div class="dez-post-media dez-img-effect zoom-slow"> <a href="#"><img [src]="article.image" alt=""></a> </div>
-                        <div class="dez-post-text">
-                            {{article.body}}
+                        <div class="dez-post-text" [innerHTML]="article.body">
+                            <!-- {{article.body}} -->
                         </div>
                         <div class="dez-post-tags clear">
                             <div class="post-tags"> <a href="#">Child </a> <a href="#">Eduction </a> <a href="#">Money </a> <a href="#">Resturent </a> </div>

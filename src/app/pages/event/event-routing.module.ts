@@ -6,8 +6,8 @@ import { SingleComponent } from './single/single.component';
 
 const routes: Routes = [
   { path: '', component: EventComponent },
-  { path: ':id', component: SingleComponent },
   { path: 'calendrier', component: CalendrierComponent },
+  { path: ':id', component: SingleComponent },
 
 ];
 

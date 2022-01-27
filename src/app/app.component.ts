@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router, NavigationStart, NavigationCancel, NavigationEnd } from '@angular/router';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { filter } from 'rxjs/operators';
-declare let $: any;
+declare let $, jQuery, SportsZone: any;
 
 
 @Component({
@@ -31,14 +31,24 @@ export class AppComponent {
     this.router.events
     .subscribe((event) => {
         if ( event instanceof NavigationStart ) {
-          
+          jQuery(document).ready(function() {
+  
+            SportsZone.init();
+            
+            jQuery('.navicon').on('click',function(){
+              $(this).toggleClass('open');
+              
+            });
+            
+          });
         }
     });
     this.routerSubscription = this.router.events
     .pipe(filter(event => event instanceof NavigationEnd || event instanceof NavigationCancel))
     .subscribe(event => {
-        // $.getScript('assets/js/custom.js');
-        // $('#preloader').fadeOut('slow');
+        $.getScript('assets/js/custom.js');
+        $.getScript('assets/js/rev.slider.js');
+
         this.location = this.router.url;
         if (!(event instanceof NavigationEnd)) {
             return;

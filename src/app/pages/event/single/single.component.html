@@ -32,7 +32,9 @@
                         </div>
                         <h3 class="m-tb10">{{event.created}} </h3>
                         <div class="dez-post-text">
-                            <p class="m-b10">{{event.description}}</p>
+                            <p class="m-b10" [innerHTML]="event.description">
+                                <!-- {{event.description}} -->
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -69,13 +71,17 @@
                                             <strong><em><h3>Désolé, il n'y a pas eu de photos lors de cet évenement.</h3></em></strong><br>
                                         </p>
                                     </ng-template>
-                                    <ul class="row dez-gallery-listing gallery-grid-4 m-b0 mfp-gallery" *ngIf="event.photos.length > 0">
-                                        <li class="card-container col-lg-3 col-sm-6 home" *ngFor="let eventPhoto of event.photos">
+                                    <ul  id="masonry1" class="row dez-gallery-listing gallery-grid-4 m-lr0 lightgallery" *ngIf="event.photos.length > 0">
+                                        <li class="water card-container col-lg-4 col-md-4 col-sm-6" *ngFor="let eventPhoto of event.photos">
                                             <div *ngFor="let photo of photos">
                                                 <div class="dez-box dez-gallery-box" *ngIf="eventPhoto === photo.id">
                                                     <div class="dez-thum dez-img-overlay1 dez-img-effect zoom-slow"> <a href="javascript:void(0);"> <img [src]="photo.image"  alt=""> </a>
                                                         <div class="overlay-bx">
-                                                            <div class="overlay-icon"> <a href="javascript:void(0);"> <i class="fa fa-link icon-bx-xs"></i> </a> <a href="{{photo.image}}" class="mfp-link"  title="DexignZone"> <i class="fa fa-picture-o icon-bx-xs"></i> </a> </div>
+                                                            <div class="overlay-icon"> 
+                                                                <span data-exthumbimage="{{photo.image}}" data-src="{{photo.image}}" class="icon-bx-xs check-km" title="{{photo.name}}">		
+                                                                    <i class="fa fa-picture-o"></i> 
+                                                                </span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
