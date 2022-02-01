@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router, NavigationStart, NavigationCancel, NavigationEnd } from '@angular/router';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { filter } from 'rxjs/operators';
-declare let $, jQuery, SportsZone: any;
+declare let $, lightGallery, jQuery, SportsZone: any;
 
 
 @Component({
@@ -25,6 +25,8 @@ export class AppComponent {
 
   ngOnInit(){
     this.recallJsFuntions();
+    SportsZone.handleMasonryFilter();
+    lightGallery(document.getElementById('masonry1'));
 }
 
   recallJsFuntions() {
@@ -48,6 +50,8 @@ export class AppComponent {
     .subscribe(event => {
         $.getScript('assets/js/custom.js');
         $.getScript('assets/js/rev.slider.js');
+        $.getScript('assets/plugins/imagesloaded/imagesloaded.js');
+        $.getScript('assets/plugins/lightgallery/js/lightgallery-all.js');
 
         this.location = this.router.url;
         if (!(event instanceof NavigationEnd)) {

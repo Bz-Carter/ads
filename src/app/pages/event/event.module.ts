@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LightgalleryModule } from 'lightgallery/angular/11';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 import { EventRoutingModule } from './event-routing.module';
 import { EventComponent } from './event.component';
@@ -22,7 +24,8 @@ import { SingleComponent } from './single/single.component';
     EventRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    LightgalleryModule
+    LightgalleryModule,
+    NgxPaginationModule
   ]
 })
 export class EventModule { }

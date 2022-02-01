@@ -21,7 +21,7 @@
     "@angular/router": "~11.2.3",
     "@ngx-loading-bar/core": "^5.1.2",
     "@ngx-loading-bar/router": "^5.1.2",
-    "lightgallery": "^2.2.1",
+    "lightgallery": "^2.3.0",
     "lightgallery.js": "^1.4.0",
     "ngx-pagination": "^5.1.1",
     "rxjs": "~6.6.0",

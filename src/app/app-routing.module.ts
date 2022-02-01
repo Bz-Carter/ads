@@ -8,10 +8,6 @@ import { HomeComponent } from './pages/home/home.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   {
-    path: 'media', 
-    loadChildren: () => import('./pages/media/media.module').then(m => m.MediaModule)
-  },
-  {
     path: 'evenements', 
     loadChildren: () => import('./pages/event/event.module').then(m => m.EventModule)
   },
