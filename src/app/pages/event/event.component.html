@@ -46,15 +46,15 @@
                         <input type="radio">
                         <a (click)="filter('')" href="#" class="site-button-secondry"><span>Voir tout</span></a> 
                     </li>
-                    <li class="btn" *ngFor="let category of categories">
+                    <li class="btn" *ngFor="let type of types">
                         <input type="radio" >
-                        <a (click)="filter(category.name)" href="#" class="site-button-secondry"><span>{{category.name}}</span></a> 
+                        <a (click)="filter(type.name)" href="#" class="site-button-secondry"><span>{{type.name}}</span></a> 
                     </li>
                 </ul>
             </div>
             <div class="clearfix">
                 <ul class="row dez-gallery-listing gallery-grid-4 m-b0 mfp-gallery">
-                    <ng-container *ngFor="let ev of filterCategory | filter:searchKey:'name'">
+                    <ng-container *ngFor="let ev of filterType | filter:searchKey:'name'">
                         <li class="card-container col-lg-3 col-sm-6 m-b30 office">
                             <div class="dez-box dez-gallery-bx">
                                 <div class="dez-media dez-img-overlay2 dez-img-effect zoom"> <img [src]="ev.image"  alt="">

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from 'src/app/interfaces/category';
+import { Type } from 'src/app/interfaces/type';
 import { Media } from 'src/app/interfaces/media';
 import { Response } from 'src/app/interfaces/response';
-import { CategoryService } from 'src/app/services/category.service';
+import { TypeService } from 'src/app/services/type.service';
 import { MediaService } from 'src/app/services/media.service';
 
 @Component({
@@ -11,16 +11,16 @@ import { MediaService } from 'src/app/services/media.service';
   styleUrls: ['./event.component.scss'],
 })
 export class EventComponent implements OnInit {
-  categories: Category[] = [];
+  types: Type[] = [];
   public events: Media[] = [];
 
   public searchTerm: string = '';
   searchKey: string = '';
 
-  public filterCategory: any;
+  public filterType: any;
 
   constructor(
-    private categoryService: CategoryService,
+    private typeService: TypeService,
     private mediaService: MediaService
   ) {}
 
@@ -32,17 +32,17 @@ export class EventComponent implements OnInit {
   }
 
   refresh() {
-    this.categoryService.all().subscribe((res: Response) => {
-      this.categories = res.data;
+    this.typeService.all().subscribe((res: Response) => {
+      this.types = res.data;
     });
 
     this.mediaService.all().subscribe((res: Response) => {
       this.events = res.data;
-      this.filterCategory = res.data;
-      this.events.forEach((a: any) => {
-        this.categories.forEach((c: any) => {
-          if (a.category === c.id) {
-            a.category = c.name;
+      this.filterType = res.data;
+      this.events.forEach((e: any) => {
+        this.types.forEach((t: any) => {
+          if (e.type === t.id) {
+            e.type = t.name;
           }
         });
       });
@@ -56,11 +56,11 @@ export class EventComponent implements OnInit {
     this.mediaService.search.next(this.searchTerm);
   }
 
-  filter(category: string) {
-    this.filterCategory = this.events
-    .filter((a:any) => {
-      if (a.category == category || category == '') {
-        return a;
+  filter(type: string) {
+    this.filterType = this.events
+    .filter((e:any) => {
+      if (e.type == type || type == '') {
+        return e;
       }
     });
   }
