@@ -4,6 +4,7 @@ import { User } from './user';
 import { Video } from './video';
 
 export interface Media {
+  forEach(arg0: (e: any) => void);
   id: number;
   name: string;
   description: string;

@@ -55,16 +55,16 @@
             <div class="clearfix">
                 <ul class="row dez-gallery-listing gallery-grid-4 m-b0 mfp-gallery">
                     <ng-container *ngFor="let ev of filterType | filter:searchKey:'name'">
-                        <li class="card-container col-lg-3 col-sm-6 m-b30 office">
+                        <li class="card-container col-lg-4 col-sm-6 m-b30 office">
                             <div class="dez-box dez-gallery-bx">
                                 <div class="dez-media dez-img-overlay2 dez-img-effect zoom"> <img [src]="ev.image"  alt="">
                                     <div class="dez-info-has p-a20">
                                         <h1 class="m-b20 m-t0"><a  [routerLink]="['/evenements/', ev.id]">{{ev.name}}</a> </h1>
                                         <p>Date: {{ev.created | date: 'd MMM y'}}</p>
                                         <ul class="dez-social-icon border">
-                                            <a href="" class="site-button button-sm radius-sm m-t5" *ngIf="ev.photos.length > 0">+ Images: {{ev.photos.length}}</a>
+                                            <a [routerLink]="['/evenements/', ev.id]" class="site-button button-sm radius-sm m-t5" *ngIf="ev.photos.length > 0">+ Images: {{ev.photos.length}}</a>
                                             <li> </li>
-                                            <a href="" class="site-button button-sm radius-sm m-t5" *ngIf="ev.videos.length > 0">+ Videos: {{ev.videos.length}}</a>
+                                            <a [routerLink]="['/evenements/', ev.id]" class="site-button button-sm radius-sm m-t5" *ngIf="ev.videos.length > 0">+ Videos: {{ev.videos.length}}</a>
                                         </ul>
                                     </div>
                                 </div>

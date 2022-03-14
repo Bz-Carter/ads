@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LightgalleryModule } from 'lightgallery/angular/11';
 import { NgxPaginationModule } from 'ngx-pagination';
+import {YouTubePlayerModule} from '@angular/youtube-player';
 
 
 import { EventRoutingModule } from './event-routing.module';
@@ -25,7 +26,8 @@ import { SingleComponent } from './single/single.component';
     FormsModule,
     ReactiveFormsModule,
     LightgalleryModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    YouTubePlayerModule
   ]
 })
 export class EventModule { }

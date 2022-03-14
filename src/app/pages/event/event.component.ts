@@ -4,11 +4,15 @@ import { Media } from 'src/app/interfaces/media';
 import { Response } from 'src/app/interfaces/response';
 import { TypeService } from 'src/app/services/type.service';
 import { MediaService } from 'src/app/services/media.service';
+import { SlugifyPipe } from 'src/app/slugify.pipe';
+declare var $: any;
 
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.scss'],
+  providers: [SlugifyPipe],
+
 })
 export class EventComponent implements OnInit {
   types: Type[] = [];
@@ -21,12 +25,14 @@ export class EventComponent implements OnInit {
 
   constructor(
     private typeService: TypeService,
-    private mediaService: MediaService
+    private mediaService: MediaService,
+    private slugify: SlugifyPipe
   ) {}
 
   ngOnInit(): void {
     this.refresh();
     this.mediaService.search.subscribe((val: any) => {
+      $.getScript('assets/js/custom.js');
       this.searchKey = val;
     });
   }
@@ -37,6 +43,7 @@ export class EventComponent implements OnInit {
     });
 
     this.mediaService.all().subscribe((res: Response) => {
+      $.getScript('assets/js/custom.js');
       this.events = res.data;
       this.filterType = res.data;
       this.events.forEach((e: any) => {

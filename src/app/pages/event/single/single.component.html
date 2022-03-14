@@ -25,12 +25,12 @@
         <div class="container woo-entry">
             <div class=" m-b30">
                 <div class="row blog-post blog-md date-style-2">
-                    <div class="col-lg-4 col-md-4  col-sm-5 m-b30"> <a href="#"><img [src]="event.image" alt=""></a> </div>
+                    <div class="col-lg-4 col-md-4  col-sm-5 m-b30"> <a><img [src]="event.image" alt=""></a> </div>
                     <div class="col-lg-8 col-md-8 col-sm-7">
                         <div class="dez-post-title ">
-                            <h2 class="post-title"><a href="#">{{event.name}}</a></h2>
+                            <h2 class="post-title"><a>{{event.name}}</a></h2>
                         </div>
-                        <h3 class="m-tb10">{{event.created}} </h3>
+                        <h6 class="m-tb10">Publié le <em class="text-primary">{{event.created | date: 'd MMM y'}}</em> </h6>
                         <div class="dez-post-text">
                             <p class="m-b10" [innerHTML]="event.description">
                                 <!-- {{event.description}} -->
@@ -71,46 +71,48 @@
                                             <strong><em><h3>Désolé, il n'y a pas eu de photos lors de cet évenement.</h3></em></strong><br>
                                         </p>
                                     </ng-template>
-                                    <ul  id="masonry1" class="row dez-gallery-listing gallery-grid-4 m-lr0 lightgallery" *ngIf="event.photos.length > 0">
-                                        <li class="water card-container col-lg-4 col-md-4 col-sm-6" *ngFor="let eventPhoto of event.photos">
-                                            <div *ngFor="let photo of photos">
-                                                <div class="dez-box dez-gallery-box" *ngIf="eventPhoto === photo.id">
-                                                    <div class="dez-thum dez-img-overlay1 dez-img-effect zoom-slow"> <a href="javascript:void(0);"> <img [src]="photo.image"  alt=""> </a>
+                                    <ng-container *ngIf="event.photos.length > 0">
+                                        <ul  id="masonry1" class="row dez-gallery-listing gallery-grid-4 m-lr0 lightgallery">
+                                            <li class="water card-container col-lg-3 col-md-4 col-sm-6" *ngFor="let tof of tofs">
+                                                <div class="dez-box dez-gallery-box">
+                                                    <div class="dez-thum dez-img-overlay1 dez-img-effect zoom-slow"> <a href="javascript:void(0);"> <img [attr.src]="tof.image"  alt=""> </a>
                                                         <div class="overlay-bx">
                                                             <div class="overlay-icon"> 
-                                                                <span data-exthumbimage="{{photo.image}}" data-src="{{photo.image}}" class="icon-bx-xs check-km" title="{{photo.name}}">		
+                                                                <span [attr.data-exthumbimage]="tof.image" [attr.data-src]="tof.image" class="icon-bx-xs check-km" [attr.title]="tof.name">		
                                                                     <i class="fa fa-picture-o"></i> 
                                                                 </span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                            </li>
+                                        </ul>
+                                    </ng-container>
                                 </div>
                             </div>
                             <div id="videos" class="tab-pane active" *ngIf="videosActivate == true">
-                                <p class="m-b10" *ngIf="event.videos.length > 0;else sorry">
-                                    <strong><em><h3>Videos de l'évenement.</h3></em></strong><br>
-                                </p>
+                                <ng-container *ngIf="event.videos.length > 0;else sorry">
+                                    <p class="m-b10">
+                                        <strong><em><h3>Videos de l'évenement.</h3></em></strong><br>
+                                    </p>
+                                    <ul id="masonry" class="row dez-gallery-listing gallery-grid-4 m-b0 mfp-gallery">
+                                        <li class="card-container col-lg-6 col-sm-6" *ngFor="let movie of movies">
+                                            <div class="dez-post-media dez-img-effect zoom-slow">
+                                                <div class="blog-post blog-grid date-style-2">
+                                                    <div class="dez-post-media dez-img-effect zoom-slow">
+                                                        <iframe width="560" height="315" [src]="movie.link" frameborder="0" allowfullscreen></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </ng-container>
+                                
                                 <ng-template #sorry>
                                     <p class="m-b10">
                                         <strong><em><h3>Désolé, il n'y a pas eu de vidéos lors de cet évenement.</h3></em></strong><br>
                                     </p>
                                 </ng-template>
-                                <ul id="masonry" class="row dez-gallery-listing gallery-grid-4 m-b0 mfp-gallery">
-                                    <li class="card-container col-lg-6 col-sm-6">
-                                        <div class="dez-post-media dez-img-effect zoom-slow">
-                                            <div class="embed-responsive embed-responsive-16by9"><iframe width="560" height="315" src="https://www.youtube.com/embed/n2mh6zHTvqU" frameborder="0" allowfullscreen=""></iframe></div>
-                                        </div>
-                                    </li>
-                                    <li class="card-container col-lg-6 col-sm-6">
-                                        <div class="dez-post-media dez-img-effect zoom-slow">
-                                            <div class="embed-responsive embed-responsive-16by9"><iframe width="560" height="315" src="https://www.youtube.com/embed/n2mh6zHTvqU" frameborder="0" allowfullscreen=""></iframe></div>
-                                        </div>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>

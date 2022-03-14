@@ -26,7 +26,6 @@ export class AppComponent {
   ngOnInit(){
     this.recallJsFuntions();
     SportsZone.handleMasonryFilter();
-    lightGallery(document.getElementById('masonry1'));
 }
 
   recallJsFuntions() {

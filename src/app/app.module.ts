@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router'
+import { LightgalleryModule } from 'lightgallery/angular/11';
+import {YouTubePlayerModule} from '@angular/youtube-player';
+import { SlugifyPipe } from './slugify.pipe';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,12 +26,15 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
     AboutsComponent,
     ContactsComponent,
     ErrorPageComponent,
+    SlugifyPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     LoadingBarRouterModule,
+    LightgalleryModule,
+    YouTubePlayerModule
   ],
   providers: [
     {

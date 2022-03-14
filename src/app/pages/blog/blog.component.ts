@@ -8,6 +8,8 @@ import { ArticleService } from 'src/app/services/article.service';
 import { VideoService } from 'src/app/services/video.service';
 import { CategoryService } from "src/app/services/category.service";
 import { TagService } from "src/app/services/tag.service";
+declare var $: any;
+
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -51,6 +53,7 @@ export class BlogComponent implements OnInit {
 
   fetchPosts(): void {
     this.articleService.all().subscribe((res: Response) => {
+      $.getScript('assets/js/custom.js');
       this.articles = res.data;
     });
   }
