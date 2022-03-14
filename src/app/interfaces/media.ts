@@ -7,6 +7,7 @@ export interface Media {
   forEach(arg0: (e: any) => void);
   id: number;
   name: string;
+  slug: string;
   description: string;
   image: string;
   category: Category;

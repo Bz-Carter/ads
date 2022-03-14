@@ -5,6 +5,7 @@ import { User } from './user';
 export interface Article {
   id: number;
   title: string;
+  slug: string;
   description: string;
   image: string;
   body: string;
