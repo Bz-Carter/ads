@@ -36,7 +36,7 @@
     <div class="widget widget_categories">
         <h4 class="widget-title">Liste des Categories</h4>
         <ul>
-            <li *ngFor="let category of categories"><a [routerLink]="['/articles/categorie/', category.id]">{{category.name}}</a> (1)</li>
+            <li *ngFor="let category of categories"><a [routerLink]="['/articles/categorie/', category.id]" [queryParams]="{ query: category.slug}">{{category.name}}</a> (1)</li>
         </ul>
     </div>
     <div class="widget widget_gallery">
@@ -53,7 +53,7 @@
     <div class="widget widget_tag_cloud">
         <h4 class="tagcloud">Mots Clés</h4>
         <div class="tagcloud"> 
-            <a [routerLink]="['/articles/tags/', tag.id]" *ngFor="let tag of tags">{{tag.name}}</a> 
+            <a [routerLink]="['/articles/tags/', tag.id]" [queryParams]="{ query: tag.slug}" *ngFor="let tag of tags">{{tag.name}}</a> 
         </div>
     </div>
 </aside>

@@ -11,6 +11,7 @@ import { EventComponent } from './event.component';
 import { CalendrierComponent } from './calendrier/calendrier.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SingleComponent } from './single/single.component';
+import { SlugifyPipe } from './slugify.pipe';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SingleComponent } from './single/single.component';
     EventComponent,
     CalendrierComponent,
     FilterPipe,
-    SingleComponent
+    SingleComponent,
+    SlugifyPipe
   ],
   imports: [
     CommonModule,

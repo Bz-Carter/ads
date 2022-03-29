@@ -9,7 +9,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { SingleComponent } from './single/single.component';
 import { ByCategoryComponent } from './filters/by-category/by-category.component';
 import { ByTagComponent } from './filters/by-tag/by-tag.component';
-
+import { SlugifyPipe } from './slugify.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { ByTagComponent } from './filters/by-tag/by-tag.component';
     SideBarComponent,
     SingleComponent,
     ByCategoryComponent,
-    ByTagComponent
+    ByTagComponent,
+    SlugifyPipe
   ],
   imports: [
     CommonModule,

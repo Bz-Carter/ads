@@ -52,8 +52,11 @@ export class EventComponent implements OnInit {
             e.type = t.name;
           }
         });
+        if (e.name) {
+          e.slug = this.slugify.transform(e.name);
+        }
       });
-      console.log(this.events);
+      // console.log(this.events);
     });
   }
 

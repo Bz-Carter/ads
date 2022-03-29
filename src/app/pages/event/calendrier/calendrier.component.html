@@ -41,7 +41,7 @@
                                     <div class="style-icon">Du <strong>{{annonce.start |date: "M/d/yy, h:mm a"}}</strong> au <strong>{{annonce.end |date: "M/d/yy, h:mm a"}}</strong></div>
                                     <div class="dez-separator style-icon"><i class="fa fa-leaf"></i></div>
                                 </div>
-                                <p>{{annonce.description}}</p>
+                                <div [innerHTML]="annonce.description"></div>
                             </div>
                             <div class="dez-post-tags">
                             </div>

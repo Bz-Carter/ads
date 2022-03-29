@@ -37,14 +37,14 @@
                             >
                                 <div class="blog-post blog-grid date-style-2">
                                     <div class="dez-post-media dez-img-effect zoom-slow"> 
-                                        <a [routerLink]="['/articles/', article.id]">
+                                        <a [routerLink]="['/articles/', article.id]" [queryParams]="{ query: article.slug}">
                                             <img [src]="article.image" alt="">
                                         </a>
                                     </div>
                                     <div class="dez-post-info">
                                         <div class="dez-post-title ">
                                             <h3 class="post-title">
-                                                <a [routerLink]="['/articles/', article.id]">{{article.title}}</a>
+                                                <a [routerLink]="['/articles/', article.id]" [queryParams]="{ query: article.slug}">{{article.title}}</a>
                                             </h3>
                                         </div>
                                         <div class="dez-post-meta ">
@@ -57,12 +57,12 @@
                                         <div class="dez-post-text">
                                             <p>{{article.description}}</p>
                                         </div>
-                                        <div class="dez-post-readmore"> <a [routerLink]="['/articles/', article.id]"
+                                        <div class="dez-post-readmore"> <a [routerLink]="['/articles/', article.id]" [queryParams]="{ query: article.slug}"
                                          title="READ MORE" rel="bookmark" class="site-button-link">En savoir plus<i class="fa fa-angle-double-right"></i></a> </div>
                                         <div class="dez-post-tags">
                                             <div class="post-tags" *ngFor="let tag of tags">
                                                 <div *ngFor="let articleTag of article.tags">
-                                                   <a [routerLink]="['/articles/tags/', tag.id]" *ngIf="tag.id === articleTag"># {{tag.name}}</a>
+                                                   <a [routerLink]="['/articles/tags/', tag.id]" [queryParams]="{ query: tag.slug}" *ngIf="tag.id === articleTag"># {{tag.name}}</a>
                                                </div>
                                            </div>
                                         </div>
