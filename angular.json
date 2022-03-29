@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "wsearch": {
+    "ads": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -16,7 +16,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/wsearch",
+            "outputPath": "dist/ads",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "wsearch:build"
+            "browserTarget": "ads:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "wsearch:build:production"
+              "browserTarget": "ads:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "wsearch:build"
+            "browserTarget": "ads:build"
           }
         },
         "test": {
@@ -115,16 +115,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "wsearch:serve"
+            "devServerTarget": "ads:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "wsearch:serve:production"
+              "devServerTarget": "ads:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "wsearch"
+  "defaultProject": "ads"
 }
